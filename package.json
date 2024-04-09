@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass -w scss:css"
+    "sass": "sass -w scss:./public/css"
   },
   "keywords": [],
   "author": "",
