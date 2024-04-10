@@ -1,1 +1,18 @@
-
+.btn {
+  background-color: white;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: 0;
+  cursor: pointer;
+  border-radius: var(--radius);
+  margin: 0 0.5rem;
+  &-primary {
+    background-color: var(--primary);
+    color: var(--text-light);
+    &:hover {
+      background-color: var(--primary-dark);
+    }
+  }
+}
