@@ -13,6 +13,13 @@
     padding: 0.5rem 1rem;
     font-size: 1.4rem;
   }
+  &-warning{
+    background: var(--warning);
+    color: var(--text-light);
+    &:hover{
+      background-color: var(--warning-dark);
+    }
+  }
   &-primary {
     background-color: var(--primary);
     color: var(--text-light);
@@ -42,4 +49,8 @@
   &-danger {
     color: var(--danger);
   }
+}
+
+.low-opacity {
+  opacity: 0.5;
 }

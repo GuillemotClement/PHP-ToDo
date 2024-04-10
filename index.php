@@ -12,6 +12,8 @@ $filename = __DIR__ . "/data/todos.json";
 //initialisation de la varaible avec tableau vide
 $todos = [];
 
+//initialisation de $todo pour enlever le warning dans le forumulaire
+$todo = '';
 
 //on vérfiie que le fichier des todo existe
 if(file_exists($filename)){
@@ -70,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="todo">
                 <h1>Ma Todo</h1>
                 <form class="todo-form" action="/" method="POST">
-                    <input type="text" name="todo">
+                    <input type="text" name="todo" value="<?= $todo ?>">
                     <button class="btn btn-primary">Ajouter</button>  
                 </form>
                 <?php if($error): ?>
@@ -78,10 +80,24 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                 <?php endif; ?>
                 <ul class="todo-list">
                     <?php foreach($todos as $todo): ?>
-                        <li class="todo-list-element">
+                        <li class="todo-list-element <?= $todo['done'] ? 'low-opacity' : '' ?> ">
                             <span class="todo-list-element-name"><?= $todo['name'] ?></span>
-                            <button class="btn btn-small btn-success">Valider</button>
-                            <button class="btn btn-small btn-danger">Supprimer</button>
+                            <a href="/edit-todo.php?id=<?= $todo['id'] ?>">
+                                
+                                    <?php if($todo['done']): ?>
+                                        <button class="btn btn-small btn-warning">
+                                            Annuler
+                                        </button>
+                                    <?php else: ?>
+                                        <button class="btn btn-small btn-success">
+                                            Valider
+                                        </button>
+                                    <?php endif; ?>
+                                
+                            </a>
+                            <a href="/delete-todo.php">
+                                <button class="btn btn-small btn-danger">Supprimer</button>
+                            </a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
