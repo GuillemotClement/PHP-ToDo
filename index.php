@@ -54,6 +54,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
         ]];
         //on sauvegarde les nouvelle données dans le fichier en format json
         file_put_contents($filename, json_encode($todos, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+        //permet de retirer le problème de renvoie du formulaire
+        header('Location /');
     }
 }   
 
@@ -83,7 +85,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                         <li class="todo-list-element <?= $todo['done'] ? 'low-opacity' : '' ?> ">
                             <span class="todo-list-element-name"><?= $todo['name'] ?></span>
                             <a href="/edit-todo.php?id=<?= $todo['id'] ?>">
-                                
                                     <?php if($todo['done']): ?>
                                         <button class="btn btn-small btn-warning">
                                             Annuler
@@ -93,9 +94,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
                                             Valider
                                         </button>
                                     <?php endif; ?>
-                                
                             </a>
-                            <a href="/delete-todo.php">
+                            <a href="/delete-todo.php?id=<?= $todo['id'] ?>">
                                 <button class="btn btn-small btn-danger">Supprimer</button>
                             </a>
                         </li>
