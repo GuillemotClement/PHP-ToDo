@@ -56,6 +56,14 @@ p {
   background-color: var(--primary-dark);
 }
 
+.text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.text-danger {
+  color: var(--danger);
+}
+
 .container {
   min-height: 100vh;
   display: flex;
