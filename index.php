@@ -70,13 +70,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             <div class="todo">
                 <h1>Ma Todo</h1>
                 <form class="todo-form" action="/" method="POST">
-                    <input type="text" name="todo" value="">
+                    <input type="text" name="todo">
                     <button class="btn btn-primary">Ajouter</button>  
                 </form>
                 <?php if($error): ?>
                     <p class="text-danger"><?= $error ?></p>
                 <?php endif; ?>
-                <div class="todo-list"></div>
+                <ul class="todo-list">
+                    <?php foreach($todos as $todo): ?>
+                        <li class="todo-list-element">
+                            <span class="todo-list-element-name"><?= $todo['name'] ?></span>
+                            <button class="btn btn-small btn-success">Valider</button>
+                            <button class="btn btn-small btn-danger">Supprimer</button>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
             </div>
         </div>
         <?php require_once 'includes/footer.php' ?>

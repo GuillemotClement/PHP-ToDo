@@ -27,6 +27,7 @@ header {
   flex-flow: row;
   justify-content: center;
   align-items: center;
+  margin: 1.5rem 0;
 }
 .todo {
   padding: 1.5rem;
@@ -50,6 +51,25 @@ header {
       border: 1px solid #333;
       border-radius: var(--radius);
       padding: 1rem 1.5rem;
+    }
+  }
+  &-list {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    &-element {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding: 0.3rem;
+      &:nth-child(odd) {
+        background-color: var(--background-light);
+      }
+      &-name {
+        flex: 1;
+        margin-right: 0.5rem;
+      }
     }
   }
 }

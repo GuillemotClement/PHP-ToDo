@@ -21,6 +21,7 @@ body {
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
@@ -47,6 +48,11 @@ p {
   cursor: pointer;
   border-radius: var(--radius);
   margin: 0 0.5rem;
+  box-shadow: var(--shadow);
+}
+.btn-small {
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
 }
 .btn-primary {
   background-color: var(--primary);
@@ -54,6 +60,20 @@ p {
 }
 .btn-primary:hover {
   background-color: var(--primary-dark);
+}
+.btn-success {
+  background: var(--success);
+  color: var(--text-light);
+}
+.btn-success:hover {
+  background-color: var(--success-dark);
+}
+.btn-danger {
+  background: var(--danger);
+  color: var(--text-light);
+}
+.btn-danger:hover {
+  background: var(--danger-dark);
 }
 
 .text {
@@ -88,6 +108,7 @@ header .logo {
   flex-flow: row;
   justify-content: center;
   align-items: center;
+  margin: 1.5rem 0;
 }
 
 .todo {
@@ -114,6 +135,25 @@ header .logo {
   border: 1px solid #333;
   border-radius: var(--radius);
   padding: 1rem 1.5rem;
+}
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.todo-list-element {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.3rem;
+}
+.todo-list-element:nth-child(odd) {
+  background-color: var(--background-light);
+}
+.todo-list-element-name {
+  flex: 1;
+  margin-right: 0.5rem;
 }
 
 footer {

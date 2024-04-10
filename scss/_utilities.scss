@@ -8,11 +8,30 @@
   cursor: pointer;
   border-radius: var(--radius);
   margin: 0 0.5rem;
+  box-shadow: var(--shadow);
+  &-small {
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+  }
   &-primary {
     background-color: var(--primary);
     color: var(--text-light);
     &:hover {
       background-color: var(--primary-dark);
+    }
+  }
+  &-success {
+    background: var(--success);
+    color: var(--text-light);
+    &:hover {
+      background-color: var(--success-dark);
+    }
+  }
+  &-danger {
+    background: var(--danger);
+    color: var(--text-light);
+    &:hover {
+      background: var(--danger-dark);
     }
   }
 }
